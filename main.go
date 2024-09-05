@@ -15,7 +15,7 @@ func main() {
 		port = "8080"
 	}
 
-	var URL string = "localhost:" + port
+	var URL string = "0.0.0.0:" + port
 	app := router.Router()
 	app.Run(URL)
 	log.Println("Listening on ", URL)
