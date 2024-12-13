@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/mmycin/ndc14notice/controller"
+	"github.com/mmycin/ndc14notice/controllers"
 	"github.com/gin-contrib/cors"
 )
 
@@ -15,6 +15,6 @@ func Router() *gin.Engine {
     config.ExposeHeaders = []string{"Content-Length"}
 	r.Use(cors.New(config))
     
-	r.GET("/notice", controller.GetAllNotice)
+	r.GET("/notice", controllers.GetAllNotice)
 	return r
 }

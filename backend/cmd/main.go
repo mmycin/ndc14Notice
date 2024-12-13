@@ -4,10 +4,14 @@ import (
 	"log"
 	"os"
 
+	"github.com/joho/godotenv"
 	"github.com/mmycin/ndc14notice/router"
+	"github.com/mmycin/mongorm/utils"
 )
 
 func main() {
+	err := godotenv.Load()
+	utils.HandleError(err)
 	var port string
 	port = os.Getenv("PORT")
 
